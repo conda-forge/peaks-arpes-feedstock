@@ -1,0 +1,74 @@
+schema_version: 1
+
+context:
+  python_min: "3.11"
+  version: "0.5.0"
+
+package:
+  name: peaks-arpes
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/p/peaks-arpes/peaks_arpes-${{ version }}.tar.gz
+  sha256: 84fefa70787a2951affb1adcdee3f9a80c8b1da40fd2ac314b56d0d0163be0c1
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - flit-core >=3.2,<4
+    - pip
+  run:
+    - python >=${{ python_min }}
+    - ipykernel >=6.25,<7
+    - ipywidgets >=8.1,<9
+    - numpy >=2.0,<3
+    - matplotlib-base >=3.9,<4
+    - xarray >=2025.6.0
+    - pint-xarray >=0.4,<0.5
+    - dask-core >=2024.6.0
+    - h5py >=3.11,<4
+    - tqdm >=4.66,<5
+    - natsort >=8.4,<9
+    - igor2 >=0.5,<1
+    - jupyterlab >=4.2,<5
+    - numbagg >=0.8,<1
+    - numba-progress >=1.1,<2
+    - numexpr >=2.10,<3
+    - hvplot >=0.10,<1
+    - pyqt6 >=6.7,<7
+    - pyqtgraph >=0.13,<1
+    - scikit-image >=0.24,<1
+    - pyperclip >=1.9,<2
+    - lmfit >=1.3,<2
+    - pydantic >=2.9,<3
+    - termcolor >=2.5,<3
+    - h5netcdf >=1.4,<2
+    - zarr >=3.0,<4
+    - uncertainties >=3.0,!=3.2.4
+
+tests:
+  - python:
+      imports:
+        - peaks
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
+
+about:
+  summary: Python tools for analysis of angle-resolved photoemission and related spectroscopic data
+  license: Apache-2.0
+  license_file: LICENSE.md
+  homepage: https://pypi.org/project/peaks-arpes/
+  repository: https://github.com/phrgab/peaks
+  documentation: https://research.st-andrews.ac.uk/kinggroup/peaks/
+
+extra:
+  recipe-maintainers:
+    - phrgab
+    - shum23
