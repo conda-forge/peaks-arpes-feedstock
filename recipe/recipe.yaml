@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   python_min: "3.11"
-  version: "0.5.1"
+  version: "0.5.2"
 
 package:
   name: peaks-arpes
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/p/peaks-arpes/peaks_arpes-${{ version }}.tar.gz
-  sha256: 46d7065b1b6b7b39a280d80da6809fb019c35f2318920e68305f55512fed216a
+  sha256: c5d82e700801c710bdd3209ceebe5125628f466532ff87e43780dfef7257a827
 
 build:
   number: 0
@@ -36,6 +36,7 @@ requirements:
     - natsort >=8.4,<9
     - igor2 >=0.5,<1
     - jupyterlab >=4.2,<5
+    - numba >=0.61.0
     - numbagg >=0.8,<1
     - numba-progress >=1.1,<2
     - numexpr >=2.10,<3
