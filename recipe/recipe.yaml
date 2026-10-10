@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   python_min: "3.11"
-  version: "0.5.3"
+  version: "0.5.4"
 
 package:
   name: peaks-arpes
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/p/peaks-arpes/peaks_arpes-${{ version }}.tar.gz
-  sha256: b9bf7ab6d601c577dd2ef32256e7a7e5e18962ba6633b68e7d55fc433adc1ce3
+  sha256: dbc57f6472389d58a61d8f297cfc9ad7610dad1fb7e1cd8c0eefabf62a83eeb8
 
 build:
   number: 0
